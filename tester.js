@@ -89,7 +89,7 @@ let string2 = "He is Goi ng to the mall";
 let string3 = "They are not go ing anywhere close to home";
 
 //! Replace: searches the string for the RegExp and replaces each find with the given string
-//! Includes: True or False is string includes the given string
+//! Includes: True or False if string includes the given string
 console.log(string.replace(/\s/g, "").toLowerCase().includes("going"));
 console.log(string2.replace(/\s/g, "").toLowerCase().includes("going"));
 console.log(string3.replace(/\s/g, "").toLowerCase().includes("going"));
@@ -344,3 +344,23 @@ let testStr = "I think I have 12 dogs and 14 cats."
 let filter = testStr.match(/(\d+\s\w+)/g);
 
 console.log(filter);
+
+let nums1 = [1,3];
+let nums2 = [2,4,5,9,9,9];
+
+var findMedianSortedArrays = function(nums1, nums2) {
+  let mergedArr = [...nums1,...nums2].sort((a,b) => a-b);
+  let middle = mergedArr.length/2;
+  if (Number.isInteger(middle)) {
+    console.log('first')
+    return console.log((mergedArr[middle - 1] + mergedArr[middle]) / 2);
+  } else {
+    console.log('second')
+    return console.log(mergedArr[Math.floor(middle)]);
+  }
+};
+
+findMedianSortedArrays(nums1, nums2);
+
+
+
